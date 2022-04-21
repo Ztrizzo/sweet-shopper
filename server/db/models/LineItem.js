@@ -17,7 +17,7 @@ const LineItem = db.define('lineitem', {
   totalPrice: {
     type: VIRTUAL,
     async get(){
-      const candy = await Candy.findByPk(this.id);
+      const candy = await Candy.findByPk(this.candyId);
       const totalPrice = (this.qty * candy.price)
       return totalPrice
     }
