@@ -1,0 +1,61 @@
+@import "../../variables.scss";
+
+.login-modal-body {
+  text-align: center;
+  font-size: 22px;
+  color: $thunder;
+
+  h4 {
+    font-weight: 400;
+    margin: 20px 0;
+  }
+
+  .login-error-msg {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .login-modal-form {
+    display: block;
+    margin: 10px auto 0;
+    width: 85%;
+    max-width: 600px;
+    box-sizing: border-box;
+
+    input,
+    button {
+      display: block;
+      width: 100%;
+      font-size: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      padding: 14px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    button {
+      color: $white;
+      background-color: $green;
+    }
+
+    &.error {
+      input {
+        border: 1px solid red;
+      }
+    }
+  }
+  .check-member {
+    margin-bottom: 29.26px;
+  }
+
+  .signup-link {
+    cursor: pointer;
+    transition: 0.2s ease;
+    
+    &:hover {
+      color: $gray;
+    }
+  }
+}

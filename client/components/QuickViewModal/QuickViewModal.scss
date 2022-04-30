@@ -1,0 +1,41 @@
+.candy-modal-container {
+  display: flex;
+
+  .modal-left {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10px 20px 20px;
+    width: 50%;
+    border-radius: 8px;
+
+    img {
+      border-radius: 8px;
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .modal-right {
+    width: 50%;
+    margin: 20px 20px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .item-name {
+      font-weight: bold;
+      font-size: large;
+      margin-bottom: 20px;
+    }
+
+    .item-details {
+      div {
+        margin-bottom: 20px;
+      }
+    }
+
+    button {
+      background-color: green;
+    }
+  }
+}

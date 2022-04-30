@@ -1,0 +1,45 @@
+@import "../../variables.scss";
+
+.cart-item {
+  display: flex;
+  margin: 10px 0;
+
+  .cart-item-img {
+    height: 110px;
+    width: 110px;
+    border: 1px solid $black;
+
+    img {
+      height: 110px;
+    }
+  }
+
+  .cart-item-body {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    padding-left: 10px;
+    font-size: 22px;
+
+    .cart-item-weight {
+      font-size: 16px;
+    }
+
+    .cart-item-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+
+      .cart-item-quantity {
+        display: flex;
+        align-items: center;
+
+        .cart-item-icon {
+          width: 22px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

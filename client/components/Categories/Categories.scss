@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.categories {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 30px;
+  justify-content: space-around;
+  margin: 50px 0;
+
+  .category {
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    background: $soft-green;
+  }
+}

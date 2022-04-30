@@ -3,9 +3,11 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Routes from './Routes'
 
+import './App.scss';
+
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <Navbar />
       <Routes />
     </div>

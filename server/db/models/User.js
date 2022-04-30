@@ -3,17 +3,40 @@ const db = require('../db')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
 const axios = require('axios');
-
+const Cart = require('./Cart');
+const LineItem = require('./LineItem');
+const Candy = require('./Candy');
+const { STRING } = require('sequelize');
 const SALT_ROUNDS = 5;
 
 const User = db.define('user', {
   username: {
     type: Sequelize.STRING,
     unique: true,
-    allowNull: false
+    allowNull: false,
+    validate:{
+      notEmpty: true
+    }
   },
   password: {
     type: Sequelize.STRING,
+    allowNull: false,
+    validate:{
+      notEmpty: true
+    }
+  },
+  admin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  firstName: {
+    type: STRING
+  },
+  lastName: {
+    type: STRING
+  },
+  email:{
+    type: STRING
   }
 })
 
@@ -47,12 +70,22 @@ User.authenticate = async function({ username, password }){
 User.findByToken = async function(token) {
   try {
     const {id} = await jwt.verify(token, process.env.JWT)
-    const user = User.findByPk(id)
+    const user = await User.findOne({
+      where: {
+        id: id
+      },
+      include:[{
+        model: Cart, include: [{
+          model: LineItem, 
+          include: [Candy]}]
+      }]
+    })
     if (!user) {
       throw 'nooo'
     }
     return user
-  } catch (ex) {
+  } 
+  catch (ex) {
     const error = Error('bad token')
     error.status = 401
     throw error

@@ -1,0 +1,18 @@
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+
+  .column-title {
+    font-size: 20px;
+  }
+
+  .column-items {
+    display: flex;
+    flex-direction: column;
+
+    .column-item {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import "../../variables.scss";
+
+.user-menu-container {
+  position: relative;
+  margin-left: 20px;
+
+  .navbar-icon {
+    color: $black;
+  }
+
+  .user-menu {
+    position: absolute;
+    min-width: 210px;
+    top: 50px;
+    right: -90px;
+    padding: 20px 0;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    &.open {
+      opacity: 1;
+      pointer-events: all;
+      z-index: 10000;
+    }
+
+    .user-menu-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-size: 16px;
+
+      .user-menu-username,
+      .user-menu-icon {
+        color: gray;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+
+      .user-menu-username {
+        color: $white;
+        display: flex;
+        border-radius: 50%;
+        background-color: $green;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &:hover {
+        background: $gray;
+        color: darkgray;
+      }
+    }
+  }
+}

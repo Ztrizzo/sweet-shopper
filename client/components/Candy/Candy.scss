@@ -1,0 +1,44 @@
+.candy-body {
+  display: flex;
+  height: 100vh;
+
+  .candy-img {
+    width: 55%;
+    border: 1px solid black;
+    margin-top: 80px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .candy-details {
+    width: 45%;
+    padding: 0 80px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f9f2e8;
+    box-sizing: border-box;
+    font-size: 22px;
+
+    .candy-weight {
+      font-size: 22px;
+    }
+
+    .candy-price {
+      margin-bottom: 20px;
+    }
+
+    .add-to-cart {
+      display: flex;
+      align-items: center;
+
+      button {
+        margin-left: 20px;
+        background-color: green;
+      }
+    }
+  }
+}

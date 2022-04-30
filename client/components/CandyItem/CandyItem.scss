@@ -1,0 +1,54 @@
+@import "../../variables.scss";
+
+.candy-item {
+  display: inline-block;
+
+  .image {
+    height: 200px;
+    width: 200px;
+    // border: solid black 0.5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: $black;
+
+    img {
+      height: 200px;
+      width: 200px;
+    }
+
+    .quick-add {
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      background-color: #fff2d6;
+      width: 88%;
+      margin: auto auto 10px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    &:hover {
+      .quick-add {
+        opacity: 1;
+        pointer-events: all;
+
+        &:hover {
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 10px 0;
+    height: 30px;
+  }
+}
