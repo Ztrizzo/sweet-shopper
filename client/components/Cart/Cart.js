@@ -53,7 +53,7 @@ class Cart extends Component {
                   <span className="cart-subtotal-label">{subtotalMessage}</span>
                   <span className="cart-subtotal-value">${totalPrice.toFixed(2)}</span>
                 </div>
-                <Link to="/confirmation">
+                <Link to="/checkout">
                   <button disabled={!cart.lineitems || cart.lineitems <=0} className="cart-checkout-button" onClick={this.toggleCart}>
                     Continue to Checkout
                   </button>

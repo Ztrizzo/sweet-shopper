@@ -2,7 +2,13 @@ const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
+require('dotenv').config()
+const stripe = require('stripe')('sk_test_51Kuq8gIOybkenklOAwgyQPPcTLU9kGA8Log8YwQ7e5yVl82ZCp0HmWrc0LgMYmF1GjmXnPXnIn0whJVIRlwbrECr00KrC45TLn')
 module.exports = app
+
+const envVariables = process.env
+
+const {STRIPE_SECRET_KEY} = envVariables
 
 // logging middleware
 app.use(morgan('dev'))
@@ -41,3 +47,5 @@ app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(err.status || 500).send(err.message || 'Internal server error.')
 })
+
+//stripe
