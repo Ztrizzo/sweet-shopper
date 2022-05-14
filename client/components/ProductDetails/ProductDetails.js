@@ -109,7 +109,7 @@ class ProductDetails extends Component{
         <h2>Edit Product Information</h2>
           <form onSubmit={this.handleSubmit} className="details-form">
             {error ? <h5 className="login-error-msg">{error}</h5> : null}
-            <div className="header-name">Username</div>
+            <div className="header-name">Candy Name</div>
             <input value={name} name="name" onChange={this.handleChange}></input>
 
             <div className="header-name">Price (in dollars)</div>
